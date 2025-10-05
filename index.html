@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PetManagement — Wireframe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img class="brand-icon" src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="huella">
+      <span>PetManagement</span>
+    </div>
+    <nav class="mini-nav">
+      <button data-target="login">Login</button>
+      <button data-target="registro_usuario">Registro</button>
+      <button data-target="dashboard">Dashboard</button>
+      <button data-target="planes">Planes</button>
+      <button data-target="agendamiento">Agendar</button>
+      <button data-target="gestion_admin">Admin</button>
+      <button data-target="registro_tratamientos">Tratamientos</button>
+      <button data-target="rutas">Rutas</button>
+    </nav>
+  </header>
+
+  <main class="canvas" id="canvas">
+    <!-- FRAME: Login -->
+    <section class="frame" id="login" aria-label="Login">
+      <div class="frame-inner">
+        <div class="left-panel">
+          <img class="logo-big" src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="logo huella">
+          <h1>Iniciar sesión</h1>
+          <div class="form">
+            <label>Email
+              <input type="email" placeholder="tucorreo@ejemplo.com">
+            </label>
+            <label>Contraseña
+              <input type="password" placeholder="••••••••">
+            </label>
+            <a class="link-small">¿Olvidaste tu contraseña?</a>
+            <button class="btn primary">Iniciar sesión</button>
+            <div class="row small">
+              <span>¿Nuevo usuario?</span>
+              <button class="btn ghost" onclick="scrollToFrame('registro_usuario')">Registrarse</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-illustration">
+          <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="mascotas" />
+        </div>
+      </div>
+    </section>
+
+    <!-- FRAME: Registro de Usuario -->
+    <section class="frame" id="registro_usuario" aria-label="Registro de Usuario">
+      <div class="frame-inner center">
+        <h2>Registro de Usuario</h2>
+        <form class="grid-2">
+          <label>Nombre completo<input type="text" placeholder="Nombre y apellidos"></label>
+          <label>Teléfono<input type="tel" placeholder="+57 300 0000000"></label>
+          <label>Email<input type="email" placeholder="correo@ejemplo.com"></label>
+          <label>Dirección<input type="text" placeholder="Calle, ciudad"></label>
+          <label>Contraseña<input type="password" placeholder="••••••"></label>
+          <label>Confirmar contraseña<input type="password" placeholder="••••••"></label>
+          <label>Método de pago
+            <select>
+              <option>Tarjeta</option>
+              <option>PSE</option>
+              <option>Efectivo</option>
+            </select>
+          </label>
+          <label class="checkbox"><input type="checkbox"> Acepto términos y condiciones</label>
+        </form>
+        <div class="actions">
+          <button class="btn primary">Registrarse</button>
+          <a class="link-small" onclick="scrollToFrame('login')">¿Ya tienes cuenta? Inicia sesión</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRAME: Registro Mascotas -->
+    <section class="frame" id="registro_mascotas" aria-label="Registro de Mascotas">
+      <div class="frame-inner">
+        <h2>Registra tu mascota</h2>
+        <div class="card big">
+          <form class="form-col">
+            <label>Nombre de la mascota<input type="text"></label>
+            <label>Especie
+              <select><option>Perro</option><option>Gato</option><option>Otro</option></select>
+            </label>
+            <label>Raza<input type="text"></label>
+            <label>Edad<input type="text" placeholder="Ej: 3 años"></label>
+            <label>Peso<input type="text" placeholder="Kg"></label>
+            <label>Historial médico<textarea rows="3"></textarea></label>
+            <label>Foto de la mascota
+              <input type="file" accept="image/*">
+            </label>
+            <div class="row">
+              <button class="btn primary">Guardar Mascota</button>
+              <button class="btn secondary" onclick="event.preventDefault();">Cancelar</button>
+            </div>
+          </form>
+        </div>
+        <h3>Mis mascotas</h3>
+        <div class="list-cards">
+          <article class="pet-card">
+            <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="">
+            <div>
+              <strong>Firulais</strong>
+              <small>Perro • Labrador • 3 años</small>
+            </div>
+          </article>
+          <article class="pet-card">
+            <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="">
+            <div>
+              <strong>Michi</strong>
+              <small>Gato • Siames • 2 años</small>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRAME: Dashboard Cliente -->
+    <section class="frame" id="dashboard" aria-label="Dashboard Cliente">
+      <aside class="sidebar">
+        <div class="brand-vertical">
+          <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="huella">
+          <span>PetManagement</span>
+        </div>
+        <nav class="side-nav">
+          <button class="active">Inicio</button>
+          <button>Agendar Servicio</button>
+          <button>Mis Mascotas</button>
+          <button>Historial de Citas</button>
+          <button>Planes Disponibles</button>
+        </nav>
+      </aside>
+
+      <div class="dashboard-main">
+        <div class="dash-header">
+          <h2>Hola, Carlos</h2>
+          <div class="avatar">C</div>
+        </div>
+
+        <section class="upcoming">
+          <h3>Próximas Citas</h3>
+          <div class="appointments">
+            <div class="appt">
+              <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="">
+              <div>
+                <strong>Luna</strong><small>12 Jul · 10:00 AM</small>
+              </div>
+            </div>
+            <div class="appt">
+              <img src="https://images.unsplash.com/photo-1507149833265-60c372daea22?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="">
+              <div>
+                <strong>Firulais</strong><small>14 Jul · 9:00 AM</small>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="quickcards">
+          <h3>Tarjetas de acceso rápido</h3>
+          <div class="cards-grid">
+            <div class="small-card">Agendar Servicio</div>
+            <div class="small-card">Mis Mascotas</div>
+            <div class="small-card">Historial de Citas</div>
+            <div class="small-card">Planes Disponibles</div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- FRAME: Planes y Servicios -->
+    <section class="frame" id="planes" aria-label="Planes y Servicios">
+      <div class="frame-inner center">
+        <h2>Planes disponibles</h2>
+        <div class="plans-grid">
+          <div class="plan-card">
+            <h4>Plan Básico</h4>
+            <ul>
+              <li>Baño básico</li>
+              <li>Corte de uñas</li>
+              <li>Limpieza de oídos</li>
+            </ul>
+            <div class="price">$X / mes</div>
+            <button class="btn primary">Seleccionar</button>
+          </div>
+          <div class="plan-card featured">
+            <h4>Plan Premium</h4>
+            <ul>
+              <li>Todo lo del básico</li>
+              <li>Corte de pelo</li>
+              <li>Cepillado dental</li>
+            </ul>
+            <div class="price">$Y / mes</div>
+            <button class="btn primary">Seleccionar</button>
+          </div>
+          <div class="plan-card">
+            <h4>Plan VIP</h4>
+            <ul>
+              <li>Todos los servicios</li>
+              <li>Atención prioritaria</li>
+              <li>Descuentos especiales</li>
+            </ul>
+            <div class="price">$Z / mes</div>
+            <button class="btn primary">Seleccionar</button>
+          </div>
+        </div>
+        <a class="link-small">Ver servicios individuales</a>
+      </div>
+    </section>
+
+    <!-- FRAME: Agendamiento de Citas -->
+    <section class="frame" id="agendamiento" aria-label="Agendamiento">
+      <div class="frame-inner center">
+        <h2>Agendar cita</h2>
+        <form class="form-col small">
+          <label>Seleccionar mascota
+            <select><option>Firulais</option><option>Michi</option></select>
+          </label>
+          <label>Seleccionar servicio
+            <select><option>Baño básico</option><option>Corte de uñas</option><option>Corte de pelo</option></select>
+          </label>
+          <label>Seleccionar fecha<input type="date"></label>
+          <label>Seleccionar hora<input type="time"></label>
+          <label>Seleccionar profesional
+            <select><option>Ana Pérez</option><option>Juan Gómez</option></select>
+          </label>
+
+          <div class="summary card">
+            <h4>Resumen de la cita</h4>
+            <p>Mascota: Firulais</p>
+            <p>Servicio: Baño básico</p>
+            <p>Fecha: 2025-10-10 10:00</p>
+            <p>Profesional: Ana Pérez</p>
+          </div>
+
+          <div class="row">
+            <button class="btn primary">Confirmar Cita</button>
+            <button class="btn secondary" onclick="event.preventDefault();">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FRAME: Gestión Administrador -->
+    <section class="frame" id="gestion_admin" aria-label="Gestión Administrador">
+      <div class="frame-inner">
+        <h2>Panel Admin</h2>
+        <div class="tabs">
+          <button class="active">Citas del Día</button>
+          <button>Registro de Tratamientos</button>
+          <button>Gestión de Personal</button>
+          <button>Reportes</button>
+        </div>
+
+        <div class="card">
+          <h4>Citas del Día</h4>
+          <table class="table">
+            <thead><tr><th>Hora</th><th>Mascota</th><th>Cliente</th><th>Acciones</th></tr></thead>
+            <tbody>
+              <tr><td>09:00</td><td>Firulais</td><td>Walter</td><td><button class="btn small">Iniciar</button> <button class="btn small secondary">Finalizar</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRAME: Registro de Tratamientos -->
+    <section class="frame" id="registro_tratamientos" aria-label="Registro de Tratamientos">
+      <div class="frame-inner center">
+        <h2>Registro de Tratamientos</h2>
+        <div class="card big">
+          <div class="info">
+            <p><strong>Cliente:</strong> Walter</p>
+            <p><strong>Mascota:</strong> Firulais (Perro, Labrador)</p>
+            <p><strong>Servicio:</strong> Baño básico</p>
+          </div>
+          <form class="form-col">
+            <label>Procedimientos realizados
+              <div class="checkboxes">
+                <label><input type="checkbox"> Baño</label>
+                <label><input type="checkbox"> Secado</label>
+                <label><input type="checkbox"> Corte de uñas</label>
+              </div>
+            </label>
+            <label>Observaciones<textarea rows="3"></textarea></label>
+            <label>Medicamentos aplicados<input type="text"></label>
+            <label>Recomendaciones<textarea rows="2"></textarea></label>
+            <label>Profesional a cargo
+              <select><option>Ana Pérez</option><option>Juan Gómez</option></select>
+            </label>
+            <div class="row">
+              <button class="btn primary">Guardar Tratamiento</button>
+              <button class="btn secondary">Generar Reporte</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRAME: Rutas Vehículos -->
+    <section class="frame" id="rutas" aria-label="Rutas Vehículos">
+      <div class="frame-inner center">
+        <h2>Rutas Vehículos</h2>
+        <div class="map card">Aquí iría el mapa (Google Maps / Mapbox)</div>
+        <aside class="route-list card">
+          <h4>Direcciones</h4>
+          <ul>
+            <li>Calle 1, Bogotá — 08:00 — Ana Pérez <button class="btn small">Optimizar Ruta</button></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
